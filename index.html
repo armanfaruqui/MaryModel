@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mary Laxamana - Model Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #2a2a2a;
+        color: white;
+        /* removed overflow-x: hidden to allow normal scrolling */
+      }
+
+      /* Landing Page Styles */
+      .landing-page {
+        display: flex;
+        min-height: 100vh;
+        /* removed transition and slide animations */
+      }
+
+      .left-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        background-color: #2a2a2a;
+        order: 2;
+      }
+
+      .model-info {
+        text-align: center;
+        max-width: 400px;
+      }
+
+      .model-name {
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        margin-bottom: 2rem;
+        line-height: 1.1;
+      }
+
+      .stats {
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: #e0e0e0;
+      }
+
+      .languages {
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+        color: #e0e0e0;
+      }
+
+      .see-more-btn {
+        border: 2px solid white;
+        background: transparent;
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.05em;
+      }
+
+      .see-more-btn:hover {
+        background-color: white;
+        color: #2a2a2a;
+      }
+
+      .right-content {
+        flex: 1;
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mbcouch.jpg-vPHrcKZpc7we5Nw1pkqY0tqRl1MOa1.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        order: 1;
+        min-height: 60vh;
+      }
+
+      /* Gallery Page Styles */
+      .gallery-page {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+        padding: 20px;
+        /* removed absolute positioning and transitions for normal flow */
+        background-color: #2a2a2a;
+      }
+
+      .gallery-item {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        min-height: 100vh;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.02);
+      }
+
+      .gallery-page .gallery-item:nth-child(1) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryYeezy.jpg-Gl1U90gEiE0qP5aX8SLRgeqlj2DfqR.jpeg");
+      }
+
+      .gallery-page .gallery-item:nth-child(2) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/side.jpg-UdKRPiNrNjI9J3Dxuir3KML0eRXrvJ.jpeg");
+      }
+
+      .gallery-page .gallery-item:nth-child(3) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryMysterious.jpg-zrmSWSMgsam1oICRjYo3dKKRgHG2f6.jpeg");
+      }
+
+      .gallery-page .gallery-item:nth-child(4) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryCrouch.jpg-0RDpWj5KCoZb5Jac0cIDoo7mlYNM54.jpeg");
+      }
+
+      /* Second gallery page styles */
+      .gallery-page-2 {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 20px;
+        padding: 20px;
+        /* removed absolute positioning and transitions for normal flow */
+        background-color: #2a2a2a;
+      }
+
+      .gallery-page-2 .gallery-item:nth-child(1) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MarySittingBack.jpg-YF76vdmm6X2ANRzH4AMlWRmszY8sgs.jpeg");
+      }
+
+      .gallery-page-2 .gallery-item:nth-child(2) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryGreenVeeveeSit.jpg-zK8PjcW9ERNlJPBoLFFm2ks4NHHl27.jpeg");
+      }
+
+      .gallery-page-2 .gallery-item:nth-child(3) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryPoliteYellow.jpg-csEl9BfUl7FQ23xITWOlDDoFxinV0O.jpeg");
+      }
+
+      .gallery-page-2 .gallery-item:nth-child(4) {
+        background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MaryPlayful.jpg-mXpXD30iYDUuNvqQrt8CuFo0KxDLwv.jpeg");
+      }
+
+      /* removed all navigation button styles (gallery-nav, nav-btn, back-btn) */
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        /* Reorder landing page content for mobile - image first, then info */
+        .landing-page {
+          flex-direction: column;
+        }
+
+        .left-content {
+          order: 2;
+        }
+
+        .right-content {
+          order: 1;
+          min-height: 60vh;
+        }
+
+        .model-name {
+          font-size: 2.5rem;
+        }
+
+        .stats,
+        .languages {
+          font-size: 1rem;
+        }
+
+        /* Add small breaks between images by reducing their size slightly */
+        .gallery-page {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 95vh);
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .gallery-page-2 {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(4, 95vh);
+          gap: 10px;
+          padding: 10px;
+        }
+
+        .gallery-item {
+          min-height: 95vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+      <div class="right-content"></div>
+      <div class="left-content">
+        <div class="model-info">
+          <h1 class="model-name">MARY LAXAMANA</h1>
+
+          <div class="stats">
+            Height: 1m62 – 5'4"<br />
+            Dress: 36 / 4<br />
+            Bust: 81 – 32<br />
+            Waist: 69 – 27<br />
+            Hips: 89 – 35<br />
+            Shoes: 38.5 – 8<br />
+            Hair: Black<br />
+            Eyes: Dark Brown
+          </div>
+
+          <div class="languages">
+            Languages<br />
+            French, English, Tagalog, Kapampangan
+            <br />
+            <br />
+            Email: tuesdesire@gmail.com <br />
+            Phone: +1 4379886133
+          </div>
+
+          <!-- updated button to scroll to gallery instead of slide -->
+          <button class="see-more-btn" onclick="scrollToGallery()">
+            See More
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Page -->
+    <div class="gallery-page" id="galleryPage">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+
+    <!-- Second gallery page -->
+    <div class="gallery-page-2" id="galleryPage2">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+
+    <!-- removed back button and navigation controls -->
+
+    <script>
+      function scrollToGallery() {
+        document.getElementById("galleryPage").scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>
